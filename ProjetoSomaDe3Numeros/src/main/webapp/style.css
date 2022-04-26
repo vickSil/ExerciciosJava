@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+
+body{
+	font-family: rockwell;
+	font-size: 25px;
+	text-align:center;
+}
+
+
+p{
+	color: blue;
+}
