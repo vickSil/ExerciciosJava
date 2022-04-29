@@ -76,5 +76,19 @@ public class CadastroBean implements Serializable {
 		this.linguagens = linguagens;
 	}
 	
+	public String getLinguagensAsString() {
+		
+		String str = "";
+		boolean first = true;
+		for(Integer linguagem : linguagens) {
+			if(!first) {
+				str = ",";
+			}
+			str += linguagem;
+			first = false;
+		}	
+		return str;
+	}
+	
 	
 }
