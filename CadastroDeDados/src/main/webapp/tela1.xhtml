@@ -18,41 +18,53 @@
 			<f:facet name="header">
 				Cadastro de Dados
 			</f:facet>
-			Nome
+			Nome:
 			<h:inputText value = "#{cadastro.pessoa.nome}"/>
-			E-mail
+			
+			E-mail:
 			<h:inputText value = "#{cadastro.pessoa.email}"/>
-			Data de Nascimento
-			<h:inputText value = "#{cadastro.senha1}"/>
-			Confirmação de senha
-			<h:inputText value = "#{cadastro.senha2}"/>
 			
-			Cidade
-			<h:inputText value = "#{cadastro.pessoa.enderecoResidencial.cidade}"/>
+			Data de Nascimento:
+			<h:inputText value="#{cadastro.pessoa.dataNascimento}">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+			</h:inputText>
 			
-			Estado
-			<h:selectOneMenu value = "#{cadastro.pessoa.enderecoResidencial.estado.sigla}">
-				<f:selectItem  itemValue="Selecione" noSelectionOption="true"/>
-				<f:selectItem  value="#{cadastro.estado}" noSelectionOption="true"/>
+			Rua:
+			<h:inputText value="#{cadastro.pessoa.enderecoResidencial.rua}" />
+			
+			Número:
+			<h:inputText value="#{cadastro.pessoa.enderecoResidencial.numero}" />
+			
+			Complemento:
+			<h:inputText value="#{cadastro.pessoa.enderecoResidencial.complemento}" />
+			
+			Bairro:
+			<h:inputText value="#{cadastro.pessoa.enderecoResidencial.bairro}" />
+			
+			CEP:
+			<h:inputText value="#{cadastro.pessoa.enderecoResidencial.cep}" />
+			
+			Cidade:
+			<h:inputText value="#{cadastro.pessoa.enderecoResidencial.cidade}" />
+			
+			Estado:
+			<h:selectOneMenu value="#{cadastro.pessoa.enderecoResidencial.estado.sigla}">
+				<f:selectItem itemValue="Selecione" noSelectionOption="true" />
+				<f:selectItems value="#{cadastro.estados}" var="e" itemValue="#{e.sigla}" itemLabel="#{e.sigla} - #{e.nome}" />
 			</h:selectOneMenu>
 			
+			Telefone residencial:
+			<h:panelGroup>
+				<h:inputText value="#{cadastro.pessoa.telefoneResidencial.ddd}" size="2" maxlength="2" />
+				<h:inputText value="#{cadastro.pessoa.telefoneResidencial.numero}" />
+			</h:panelGroup>
 			
+			Telefone celular:
+			<h:panelGroup>
+				<h:inputText value="#{cadastro.pessoa.telefoneCelular.ddd}" size="2" maxlength="2" />
+				<h:inputText value="#{cadastro.pessoa.telefoneCelular.numero}" />
+			</h:panelGroup>
 			
-			
-			Deseja receber e-mail?
-			<h:selectBooleanCheckbox value = "#{cadastro.receberEmails}"/>
-
-			Observações
-			<h:inputTextarea value = "#{cadastro.observacoes}" rows = "4" cols="30"/>
-				
-			Linguagens de Programação
-			<h:selectManyCheckbox value="#{cadastro.linguagens}">
-			
-				<f:selectItems value="#{cadastro.listaLinguagens}" var="l"
-					itemValue="#{l.id}" itemLabel="#{l.nome}"/>
-			
-			</h:selectManyCheckbox>
-	
 		</h:panelGrid>
 		
 		<h:commandButton value = "Cadastrar" action = "info"/>

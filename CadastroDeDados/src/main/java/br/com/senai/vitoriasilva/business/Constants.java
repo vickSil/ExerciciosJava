@@ -28,12 +28,12 @@ public class Constants {
 		ESTADOS.add(new Estado("São Paulo","SP"));
 		
 		INTERESSES = new ArrayList<>();
-		INTERESSES.add(new Interesse("Esportes"));
-		INTERESSES.add(new Interesse("Música"));
-		INTERESSES.add(new Interesse("Artes Marciais"));
-		INTERESSES.add(new Interesse("Viagens"));
-		INTERESSES.add(new Interesse("Cinema"));
-		INTERESSES.add(new Interesse("Dança"));
+		INTERESSES.add(new Interesse(1 , "Esportes"));
+		INTERESSES.add(new Interesse(2 , "Música"));
+		INTERESSES.add(new Interesse(3 , "Artes Marciais"));
+		INTERESSES.add(new Interesse(4 , "Viagens"));
+		INTERESSES.add(new Interesse(5 , "Cinema"));
+		INTERESSES.add(new Interesse(6 , "Dança"));
 		
 		
 	}

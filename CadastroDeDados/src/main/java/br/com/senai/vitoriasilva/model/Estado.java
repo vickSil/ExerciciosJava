@@ -6,6 +6,13 @@ public class Estado {
 	String sigla;
 	
 	
+	public Estado() {
+		
+	}
+	public Estado(String nome, String sigla) {
+		this.nome = nome;
+		this.sigla = sigla;
+	}
 	public String getSigla() {
 		return sigla;
 	}
