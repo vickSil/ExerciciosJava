@@ -8,7 +8,6 @@ public class Interesse {
 //Construtor recebe o valor na variavel
 	
 	public Interesse(Integer id, String area) {
-
 		this.id = id;
 		this.area = area;
 	}
