@@ -5,6 +5,13 @@ public class Interesse {
 	Integer id;
 	String area;
 	
+//Construtor recebe o valor na variavel
+	
+	public Interesse(Integer id, String area) {
+		super();
+		this.id = id;
+		this.area = area;
+	}
 	
 	public Integer getId() {
 		return id;

@@ -21,16 +21,23 @@
 			Nome
 			<h:inputText value = "#{cadastro.pessoa.nome}"/>
 			E-mail
-			<h:inputText value = "#{cadastro.email}"/>
-			Senha
+			<h:inputText value = "#{cadastro.pessoa.email}"/>
+			Data de Nascimento
 			<h:inputText value = "#{cadastro.senha1}"/>
 			Confirmação de senha
 			<h:inputText value = "#{cadastro.senha2}"/>
 			
-			<h:selectOneRadio value = "#{cadastro.sexo}">
-				<f:selectItem  itemValue="F" itemLabel="Feminino"/>
-				<f:selectItem  itemValue="M" itemLabel="Maculino"/>
-			</h:selectOneRadio>
+			Cidade
+			<h:inputText value = "#{cadastro.pessoa.enderecoResidencial.cidade}"/>
+			
+			Estado
+			<h:selectOneMenu value = "#{cadastro.pessoa.enderecoResidencial.estado.sigla}">
+				<f:selectItem  itemValue="Selecione" noSelectionOption="true"/>
+				<f:selectItem  value="#{cadastro.estado}" noSelectionOption="true"/>
+			</h:selectOneMenu>
+			
+			
+			
 			
 			Deseja receber e-mail?
 			<h:selectBooleanCheckbox value = "#{cadastro.receberEmails}"/>

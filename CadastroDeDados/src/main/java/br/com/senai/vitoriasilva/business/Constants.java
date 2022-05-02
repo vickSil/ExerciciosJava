@@ -9,7 +9,7 @@ import br.com.senai.vitoriasilva.model.Interesse;
 public class Constants {
 
 	public static final List<Estado> ESTADOS;
-	public static final List<Interesse> INTERESSE;	
+	public static final List<Interesse> INTERESSES;	
 	
 	
 	//static, roda uma vez preenchendo os campos 
@@ -26,6 +26,16 @@ public class Constants {
 		ESTADOS.add(new Estado("Rio de Janeiro","RJ"));
 		ESTADOS.add(new Estado("Santa Catarina","SC"));
 		ESTADOS.add(new Estado("São Paulo","SP"));
+		
+		INTERESSES = new ArrayList<>();
+		INTERESSES.add(new Interesse("Esportes"));
+		INTERESSES.add(new Interesse("Música"));
+		INTERESSES.add(new Interesse("Artes Marciais"));
+		INTERESSES.add(new Interesse("Viagens"));
+		INTERESSES.add(new Interesse("Cinema"));
+		INTERESSES.add(new Interesse("Dança"));
+		
+		
 	}
 	
 }
