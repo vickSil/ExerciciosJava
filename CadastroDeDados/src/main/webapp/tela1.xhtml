@@ -19,14 +19,14 @@
 				Cadastro de Dados
 			</f:facet>
 			Nome
-			<h:inputText value = "#{cadastro.nome}"/>
+			<h:inputText value = "#{cadastro.pessoa.nome}"/>
 			E-mail
 			<h:inputText value = "#{cadastro.email}"/>
 			Senha
 			<h:inputText value = "#{cadastro.senha1}"/>
 			Confirmação de senha
 			<h:inputText value = "#{cadastro.senha2}"/>
-			Sexo
+			
 			<h:selectOneRadio value = "#{cadastro.sexo}">
 				<f:selectItem  itemValue="F" itemLabel="Feminino"/>
 				<f:selectItem  itemValue="M" itemLabel="Maculino"/>
