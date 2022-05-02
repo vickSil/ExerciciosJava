@@ -30,7 +30,9 @@ public class CadastroBean implements Serializable{
 		this.pessoa = pessoa;
 	}
 	
-	
+	 public List<Estado>{
+		 
+	 }
 	
 	
 	

@@ -1,1 +1,11 @@
 @charset "ISO-8859-1";
+
+body{
+	
+	background-color: lightblue;
+	font-family: rockwell;
+}
+
+h:form{
+	margin-left: 100px;
+}
