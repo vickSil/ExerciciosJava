@@ -15,6 +15,8 @@
 <h:outputStylesheet library="css" name= "styles.css" />
 
 	<h:form>
+
+	<h:panelGroup rendered="#{tabela.despesas.size() > 0}">
 		<table class = "tabela">
 			<tr>
 				<th class = "cabecalho" colspan="5"> Lista de Despesas</th>
@@ -61,6 +63,13 @@
 			</tr>
 		</ui:repeat>
 		</table>
+		</h:panelGroup>
+		
+		
+	<h:panelGroup rendered="#{tabela.despesas.size() == 0}">
+		<h:outputText value="Não existe despesas cadastradas" styleClass="message"/>
+	</h:panelGroup>
+		
 		<br/>
 	<h:commandButton value = "Inserir" action = "#{tabela.inserir}"/>
 </h:form>
