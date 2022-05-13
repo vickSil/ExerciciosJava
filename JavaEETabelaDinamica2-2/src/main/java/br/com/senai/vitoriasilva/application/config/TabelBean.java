@@ -1,6 +1,7 @@
 package br.com.senai.vitoriasilva.application.config;
 
 
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,26 +12,22 @@ import javax.inject.Named;
 
 import br.com.senai.vitoriasilva.application.model.Despesas;
 
-//retira o aviso de erro do Eclipse
 @SuppressWarnings("serial")
-
-//
 @Named("tabela")
 @SessionScoped
 
 public class TabelBean implements Serializable{
 
-	private List<Despesas> despesasList = new ArrayList<>();
-	private ListDataModel<Despesas> despesas = new ListDataModel<>(despesasList);
+	private List<Despesas> despesas = new ArrayList<>();
 	
 	public String inserir() {
 		Despesas d = new Despesas();
-		despesasList.add(d);
+		despesas.add(d);
 		return null;
 	}
 	
 	public String excluir(Despesas despesa) {
-		despesasList.remove(despesa);
+		despesas.remove(despesa);
 		return null;
 	}
 	
@@ -44,7 +41,7 @@ public class TabelBean implements Serializable{
 		return null;
 	}
 	
-	public ListDataModel<Despesas> getDespesas(){
+	public List<Despesas> getDespesas(){
 		return despesas;
 	}
 	
