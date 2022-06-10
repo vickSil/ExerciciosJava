@@ -28,12 +28,14 @@ public class EditPedidoBean implements Serializable {
 	@EJB
 	private ClienteBean clienteBean;
 	
+	
 	private List<Cliente> clientes;
 	private List<Produto> produtos;
 	
 	private Integer selectedClienteId;
 	private Integer[] selectedProdutosIds;
 	
+	//executa essa ação imediatamente
 	@PostConstruct
 	public void init() {
 		clientes = clienteBean.listar();
