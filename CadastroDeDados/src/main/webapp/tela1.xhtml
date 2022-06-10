@@ -19,6 +19,8 @@
 				Cadastro de Dados
 			</f:facet>
 			
+			<!-- declarando campos que vão ser salvos -->
+			
 			Nome:
 			<h:inputText value = "#{cadastro.pessoa.nome}"/>
 			
@@ -33,7 +35,7 @@
 			Rua:
 			<h:inputText value="#{cadastro.pessoa.enderecoResidencial.rua}" />
 			
-			N�mero:
+			Número:
 			<h:inputText value="#{cadastro.pessoa.enderecoResidencial.numero}" />
 			
 			Complemento:
@@ -49,6 +51,7 @@
 			<h:inputText value="#{cadastro.pessoa.enderecoResidencial.cidade}" />
 			
 			Estado:
+			<!-- menu dropdown com os estados cadastrados na lista -->
 			<h:selectOneMenu value="#{cadastro.pessoa.enderecoResidencial.estado.sigla}">
 				<f:selectItem itemValue="Selecione" noSelectionOption="true" />
 				<f:selectItems value="#{cadastro.estados}" var="e" itemValue="#{e.sigla}" itemLabel="#{e.sigla} - #{e.nome}" />
@@ -67,7 +70,7 @@
 			</h:panelGroup>
 			
 		</h:panelGrid>
-		
+		<!-- botao vai levar a tela2.xhtml -->
 		<h:commandButton value = "Finalizar" action = "tela2"/>
 		
 	</h:form>
