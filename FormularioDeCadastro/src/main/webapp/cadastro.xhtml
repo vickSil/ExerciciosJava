@@ -16,7 +16,7 @@
 		<h:form>
 		<h:panelGrid columns="2">
 			<f:facet name="header">
-				Cadastro de Usu�rio
+				Cadastro de Usuário
 			</f:facet>
 			Nome
 			<h:inputText value = "#{cadastro.nome}"/>
@@ -24,9 +24,10 @@
 			<h:inputText value = "#{cadastro.email}"/>
 			Senha
 			<h:inputText value = "#{cadastro.senha1}"/>
-			Confirma��o de senha
+			Confirmação de senha
 			<h:inputText value = "#{cadastro.senha2}"/>
 			Sexo
+			<!-- aqui o usuário pode escolher uma opção  -->
 			<h:selectOneRadio value = "#{cadastro.sexo}">
 				<f:selectItem  itemValue="F" itemLabel="Feminino"/>
 				<f:selectItem  itemValue="M" itemLabel="Maculino"/>
@@ -35,19 +36,23 @@
 			Deseja receber e-mail?
 			<h:selectBooleanCheckbox value = "#{cadastro.receberEmails}"/>
 
-			Observa��es
+			Observações
+			<!-- area de texto, dividida em um tamanho de 4 linhas e 30 colunas -->
 			<h:inputTextarea value = "#{cadastro.observacoes}" rows = "4" cols="30"/>
 				
-			Linguagens de Programa��o
-			<h:selectManyCheckbox value="#{cadastro.linguagens}">
+			Linguagens de Programação
 			
+			<!-- manyCheckbox = varias caixas de seleção que irão aparecer quando listar as linguagens salvas -->
+			<h:selectManyCheckbox value="#{cadastro.linguagens}">
+	
+				<!-- variavel "l" guarda o valor e id da linguagem escolhida -->
 				<f:selectItems value="#{cadastro.listaLinguagens}" var="l"
 					itemValue="#{l.id}" itemLabel="#{l.nome}"/>
 			
 			</h:selectManyCheckbox>
 	
 		</h:panelGrid>
-		
+		<!-- botão vai levar para a página info, onde mostra todas as informações que foram preenchidas pelo usuário -->
 		<h:commandButton value = "Cadastrar" action = "info"/>
 		
 	</h:form>
