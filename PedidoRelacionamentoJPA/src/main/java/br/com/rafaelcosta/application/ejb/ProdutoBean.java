@@ -12,8 +12,9 @@ import br.com.rafaelcosta.application.model.Produto;
 public class ProdutoBean {
 
 	@PersistenceContext
+	//esse "em" vai ser a entidade que gerencia os dados do mysql
 	private EntityManager em;
-	
+	//nesse método, o valor da lista é atribuido ao em com uma query
 	public List<Produto> listar() {
 		return em.createQuery("SELECT p FROM Produto p", Produto.class).getResultList();
 	}
