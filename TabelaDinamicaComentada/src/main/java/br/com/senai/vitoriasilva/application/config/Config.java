@@ -8,7 +8,7 @@ import javax.faces.annotation.FacesConfig.Version;
 //forçando ele a estar na versão 2.3 do jsf
 @FacesConfig(version = Version.JSF_2_3)
 
-//tempo devida: enquanto a aplicação estiver aberta, essas configuarações vão funcionar
+//tempo de vida: enquanto a aplicação estiver aberta, essas configurações vão funcionar
 @ApplicationScoped
 
 public class Config {
