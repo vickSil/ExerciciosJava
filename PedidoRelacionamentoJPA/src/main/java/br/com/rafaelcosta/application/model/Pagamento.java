@@ -25,7 +25,8 @@ public class Pagamento implements Serializable {
 	@Column(name = "tipo_pagto", length = 20, nullable = false)
 	private TipoPagamento tipoPagto;
 	
-	@OneToOne(mappedBy = "pagamento")
+	
+	@OneToOne(mappedBy = "pagamento") //tipo de relacionamento de 1 para 1
 	private Pedido pedido;
 	
 
