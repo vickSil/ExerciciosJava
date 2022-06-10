@@ -15,11 +15,13 @@
 
 <h2>Digite uma palavra ou texto para ser invertido</h2>
 
+	<!-- abrindo formulário -->
 	<h:form>
+		<!-- mandando a variavel texto para o pageBean realizar a ação de inverter -->
 		<p>Texto: <h:inputText value="#{pageBean.texto}" /></p>
-
+		<!-- botão que faz a ação de inverter o texto escrito -->
 		<h:commandButton value= "Inverter" action = "#{pageBean.inverter}"/>
-		
+		<!-- puxand o texto ja invertido do Bean -->
 		<h2>Texto invertido, #{pageBean.invertido} !</h2>
 		
 	</h:form>
