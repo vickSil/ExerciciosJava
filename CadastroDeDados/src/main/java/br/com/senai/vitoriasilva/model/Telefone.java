@@ -3,6 +3,7 @@ package br.com.senai.vitoriasilva.model;
 public class Telefone {
 
 	public enum Tipo{
+		/*  tipo enum = armazena um conjunto de valores constantes */
 		FIXO, CELULAR
 	}
 	
