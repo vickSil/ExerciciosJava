@@ -23,13 +23,15 @@ public class FormBean implements Serializable {
 
 	@Inject   //pega as informações da tela e traz p/ bean
 	private FacesContext context;
-	
+	//age na interface do jsf
 	private UIComponent searchInputText;
 	
 	private Integer tarefaId;
 	
 	private Tarefa tarefa;
-	
+	//gravando tarefa
+	//se já tiver uma tarefa igual salva,ele vai apenas editar aqulea salva
+	//se não, vai salvar uma nova
 	public void gravar(AjaxBehaviorEvent event) {
 		if(tarefa.getId()==null) {
 			tarefaBean.inserir(tarefa);
@@ -38,9 +40,11 @@ public class FormBean implements Serializable {
 		}		
 	}
 	
+	//pesquisa de tarefa
 	public void pesquisar(AjaxBehaviorEvent event) {
 		tarefa = tarefaBean.carregar(tarefaId);
-		
+		//se a tarefa for vaiza, a mensagem aparece
+		//se não, ele modtrs essa tarefa
 		if(tarefa == null) {
 			context.addMessage(searchInputText.getClientId(context),
 					new FacesMessage("Tarefa n�o encontrada"));
@@ -59,7 +63,7 @@ public class FormBean implements Serializable {
 		return tarefa;
 	}
 
-//n precisa por no projeto
+
 	
 	public UIComponent getSearchInputText() {
 		return searchInputText;
@@ -68,8 +72,7 @@ public class FormBean implements Serializable {
 	public void setSearchInputText(UIComponent searchInputText) {
 		this.searchInputText = searchInputText;
 	}
-//n precisa por no projeto
-	
+
 	
 	public Integer getTarefaId() {
 		return tarefaId;
