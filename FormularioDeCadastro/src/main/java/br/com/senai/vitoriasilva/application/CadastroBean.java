@@ -22,6 +22,7 @@ public class CadastroBean implements Serializable {
 	private String observacoes;
 	private Integer[] linguagens;
 	
+		/* puxando lista de linguagens cadastradas */
 	public Linguagem[] getListaLinguagens() {
 		return Linguagem.LINGUAGENS;
 	}
@@ -75,18 +76,22 @@ public class CadastroBean implements Serializable {
 	public void setLinguagens(Integer[] linguagens) {
 		this.linguagens = linguagens;
 	}
-	
+	/* trazer uma representação trextual daquilo que estiver salvo na instância de um objeto */
 	public String getLinguagensAsString() {
-		
+		/* usando variavel str para guardar os valores da lista de linguagens e mostra-las na tela */
 		String str = "";
 		boolean first = true;
+		
+		/* laço for para ler a lista de linguagens(constante) */
 		for(Integer linguagem : linguagens) {
 			if(!first) {
 				str += ",";
 			}
+			/* puxando o nome da linguagem para mostrar */
 			str += Linguagem.LINGUAGENS[linguagem].getNome();
 			first = false;
 		}	
+		/* retornando os valores atribuidos a variavel str */
 		return str;
 	}
 	
