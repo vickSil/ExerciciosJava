@@ -9,10 +9,13 @@ import br.com.senai.vitoriasilva.model.Telefone;
 
 public class CadastroBean implements Serializable{
 
-	private Pessoa pessoa;
 	
+	private Pessoa pessoa;
+	/* puxando os dados da classe pessoa */
 	public Pessoa getPessoa() {
+		/* validando, se pessoa não tiver dado, vai mandar inserir os dados em pessoa */
 		if (pessoa == null) {
+			/* criando construtor */
 			pessoa = new Pessoa();
 			pessoa.setEnderecoResidencial(new Endereco());
 			pessoa.getEnderecoResidencial().setEstado(new Estado());
@@ -23,9 +26,10 @@ public class CadastroBean implements Serializable{
 			pessoa.setTelefoneComercial(new Telefone());
 			
 		}
+		/* retornando os dados de pessoa */
 		return pessoa;
 	}
-
+	/* puxando os dados de pessoa */
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
