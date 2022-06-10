@@ -11,9 +11,9 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Cliente implements Serializable {
-	
+	//chamando campos que estão na tabela do mysql
 	@Id
-	@GeneratedValue
+	@GeneratedValue //fala que o campo ID esta preenchido automaticamente pelo banco de dados
 	private Integer id;
 	
 	@Column(length = 100, nullable = false)
@@ -57,7 +57,7 @@ public class Cliente implements Serializable {
 		this.pedidos = pedidos;
 	}
 
-	@Override
+	@Override //diz que voce esta sobrescrevendo um método e não criando um novo(no caso o toString)
 	public String toString() {
 		return "Cliente [id=" + id + ", nome=" + nome + ", email=" + email + "]";
 	}
