@@ -23,7 +23,7 @@ public class PedidoBean {
 	public List<Pedido> listar() {
 		return em.createQuery("SELECT p FROM Pedido p", Pedido.class).getResultList();
 	}
-	
+	//chamando método pagar com paramentros ja presentes no mysql, validando eles
 	public void pagar(Integer pedidoId, String tipo) {
 		TipoPagamento tipoPagamento = TipoPagamento.valueOf(tipo);
 		Pedido pedido = em.find(Pedido.class, pedidoId);
@@ -32,15 +32,15 @@ public class PedidoBean {
 		pagamento.setTipoPagto(tipoPagamento);
 		em.persist(pagamento);
 		
-		pedido.setPagamento(pagamento); //binding com a varivae pedido de cima 
+		pedido.setPagamento(pagamento); //fazendo binding com a variavel 
 	}
-	
+	//chamando método excluir com paramentros ja presentes no mysql, validando eles
 	public void excluir(Integer pedidoId) {
 		Pedido pedido = em.find(Pedido.class, pedidoId);
 		em.remove(pedido);
 		
 	}
-	
+	//chamando método de cadastro com parametros presentes no mysql
 	public void cadastrar(Integer clienteId, Integer[] produtosIds) throws Exception {
 		Cliente cliente = em.find(Cliente.class, clienteId);
 		
