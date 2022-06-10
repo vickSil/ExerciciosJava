@@ -18,7 +18,7 @@ import br.com.rafaelcosta.application.model.Produto;
 @Named
 @RequestScoped
 public class EditPedidoBean implements Serializable {
-	
+	//componente que gerencia a lógica de negócio
 	@EJB
 	private PedidoBean pedidoBean;
 	
